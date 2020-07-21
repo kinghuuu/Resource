@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex网格布局</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .grid {
+            background-color: #ddd;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .cell {
+            background-color: skyblue;
+            height: 100px;
+            margin: 10px;
+            flex: 1
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+</body>
+
+</html>
