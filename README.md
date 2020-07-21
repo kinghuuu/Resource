@@ -1,4 +1,4 @@
-<p align="left"><img src="https://kinghuuu.github.io/Images/lamp.png" alt="lamp" width="100"/></p>
+<p align="left"><img src="https://kinghuuu.github.io/Resource/img/lamp.png" alt="lamp" width="100"/></p>
 
 ## 面试笔记(临时存)
 #### React / Vue.js 之类的框架为什么需要给组件添加 key 属性，其作用是什么？
