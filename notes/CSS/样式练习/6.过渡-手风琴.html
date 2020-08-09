@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+      width: 200px;
+      height: auto;
+      margin: 10px auto;
+    }
+
+    .item {
+      width: 100%;
+      height: auto;
+    }
+
+    .item>h3 {
+      height: 40px;
+      line-height: 40px;
+      background-color: #7dffe7;
+      color: orange;
+      border-bottom: 2px solid #ccc;
+      padding-left: 10px;
+    }
+
+    .item>.itemBox {
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      /* display: none; */
+      /* 添加过渡效果 */
+      transition-property: height;
+      transition-duration: 1s;
+
+    }
+
+    .item>.itemBox>ul {
+      list-style: none;
+      background-color: #eaffb6;
+      padding-left: 10px;
+    }
+
+    /* 为item添加 hover伪类 */
+    .item:hover>.itemBox {
+      display: block;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <div class="item">
+      <h3>新闻1</h3>
+      <div class="itemBox">
+        <ul>
+          <li>内容1</li>
+          <li>内容2</li>
+          <li>内容3</li>
+          <li>内容4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻2</h3>
+      <div class="itemBox">
+        <ul>
+          <li>内容1</li>
+          <li>内容2</li>
+          <li>内容3</li>
+          <li>内容4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻3</h3>
+      <div class="itemBox">
+        <ul>
+          <li>内容1</li>
+          <li>内容2</li>
+          <li>内容3</li>
+          <li>内容4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>新闻4</h3>
+      <div class="itemBox">
+        <ul>
+          <li>内容1</li>
+          <li>内容2</li>
+          <li>内容3</li>
+          <li>内容4</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

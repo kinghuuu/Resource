@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .slider {
+      height: 340px;
+      width: 790px;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .slider li {
+      position: absolute;
+      display: none;
+    }
+
+    .slider li:first-child {
+      display: block;
+    }
+
+    .arrow {
+      display: none;
+    }
+
+    .slider:hover .arrow {
+      display: block;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      font-family: "Simsun", "宋体";
+      width: 30px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      cursor: pointer;
+    }
+
+    .arrow-left:hover,
+    .arrow-right:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <ul>
+      <li><a href="#"><img src="./slide1.png" alt="图片1" title="1"></a></li>
+      <li><a href="#"><img src="./slide2.png" alt="图片2" title="2"></a></li>
+      <li><a href="#"><img src="./slide3.png" alt="图片3" title="3"></a></li>
+    </ul>
+    <div class="arrow">
+      <span class="arrow-left">
+        << /span> <span class="arrow-right">>
+          </span>
+    </div>
+  </div>>
+</body>
+<script>
+  $(function () {
+    var count = 0;
+    $(".arrow-right").click(function () {
+      count++;
+      if (count == $(".slider li").length) {
+        count = 0;
+      }
+      //让count对应的图片渐渐显示,其他兄弟渐渐隐藏
+      $(".slider li").eq(count).fadeIn(1000).siblings("li").fadeOut(1000);
+    })
+
+    $(".arrow-left").click(function () {
+      count--;
+      if (count == -1) {
+        count = $(".slider li").length - 1;
+      }
+      $(".slider li").eq(count).fadeIn(1000).siblings("li").fadeOut(1000);
+    })
+
+  });
+
+</script>
+
+</html>

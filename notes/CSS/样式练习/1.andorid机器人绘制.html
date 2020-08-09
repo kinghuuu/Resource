@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color: #ccc;
+    }
+
+    .content {
+      width: 500px;
+      height: 500px;
+      border: 1px solid red;
+      margin: 50px auto;
+    }
+
+    .header {
+      width: 250px;
+      height: 125px;
+      background-color: darkgreen;
+      margin: 10px auto;
+      border-top-left-radius: 125px;
+      border-top-right-radius: 125px;
+      position: relative;
+    }
+
+    .header::before,
+    .header::after {
+      /* 使用伪元素添加眼睛 */
+      /* 1.一定要设置content属性 才能被看到. */
+      /* 2.如果需要设置宽度就应该转换其为块级元素,因为它默认是行级元素. */
+      /*   转换为块级元素有3种方法: float display  position */
+      content: "";
+      position: absolute;
+      bottom: 40px;
+      width: 20px;
+      height: 20px;
+      border: 10px;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    .header::before {
+      left: 70px;
+    }
+
+    .header::after {
+      right: 70px;
+    }
+
+    .body {
+      width: 250px;
+      height: 250px;
+      background-color: darkgreen;
+      border-radius: 0 0 20px 20px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .body::before,
+    .body::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      background-color: darkgreen;
+      width: 30px;
+      height: 180px;
+      border-radius: 10px;
+    }
+
+    .body::before {
+      left: -40px;
+    }
+
+    .body::after {
+      right: -40px;
+    }
+
+    .footer {
+      width: 250px;
+      height: 100px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .footer::before,
+    .footer::after {
+      content: "";
+      position: absolute;
+      background-color: darkgreen;
+      width: 30px;
+      height: 90px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .footer::before {
+      left: 50px;
+    }
+
+    .footer::after {
+      right: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header"></div>
+    <div class="body"></div>
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

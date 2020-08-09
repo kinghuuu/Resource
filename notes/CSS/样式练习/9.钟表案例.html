@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .clock {
+      width: 300px;
+      height: 300px;
+      border: 10px solid #ccc;
+      border-radius: 50%;
+      /*  这里写160px才是对的,避免时钟宽高有变,这里直接用50% */
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .line {
+      width: 6px;
+      height: 300px;
+      position: absolute;
+      background-color: #ccc;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+    }
+
+    .line1,
+    .line4 {
+      width: 10px;
+    }
+
+    .line2 {
+      /*transform: rotate(30deg);*/
+      /* 这里直接这样写,会掩盖掉之前的transform属性 */
+      transform: translate(-50%, 0) rotate(30deg);
+    }
+
+    .line3 {
+      transform: translate(-50%, 0) rotate(60deg);
+    }
+
+    .line4 {
+      transform: translate(-50%, 0) rotate(90deg);
+    }
+
+    .line5 {
+      transform: translate(-50%, 0) rotate(120deg);
+    }
+
+    .line6 {
+      transform: translate(-50%, 0) rotate(150deg);
+    }
+
+    .cover {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hour {
+      width: 6px;
+      height: 80px;
+      background-color: red;
+      /* 下面设置时针水平居中 */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+
+      transform-origin: center bottom;
+      animation: clockAnimation 43200s linear infinite;
+    }
+
+    .minute {
+      width: 4px;
+      height: 90px;
+      background-color: green;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+
+      transform-origin: center bottom;
+      animation: clockAnimation 3600s linear infinite;
+    }
+
+    .second {
+      width: 2px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+
+      /*设置旋转轴心*/
+      transform-origin: center bottom;
+      /*添加动画*/
+      animation: clockAnimation 60s linear infinite;
+      /* linear与steps(60)不能放一起设置 */
+      animation-timing-function: steps(60);
+    }
+
+    .center {
+      width: 20px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+
+
+    /* 创建动画 */
+    @keyframes clockAnimation {
+      from {
+        transform: translate(-50%, -100%) rotate(0deg);
+        /*如果之前定义了transform,一定要再次引入进来才行*/
+      }
+
+      to {
+        transform: translate(-50%, -100%) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+    <div class="line line4"></div>
+    <div class="line line5"></div>
+    <div class="line line6"></div>
+    <div class="cover"></div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+    <div class="center"></div>
+  </div>
+</body>
+
+</html>

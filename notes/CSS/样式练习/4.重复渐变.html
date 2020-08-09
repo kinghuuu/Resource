@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<div>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div.radial {
+      height: 300px;
+      width: 300px;
+      /* 
+            这样写没有意义
+            background: radial-gradient(#fff 0%,#fff 10%,
+            #000 10%,#000 20%,
+            #fff 20%,#fff 30%) 
+            */
+      /*  下面是重复径向渐变 */
+      background: repeating-radial-gradient(circle closest-side at center center,
+          #fff 0%, #fff 10%,
+          #000 10%, #000 20%);
+      /* 后面会自动重复 */
+    }
+
+    div.linear {
+      height: 300px;
+      width: 300px;
+      /* 下面是重复线性渐变 */
+      background: repeating-linear-gradient(45deg,
+          #fff 0%, #fff 10%,
+          #000 10%, #000 20%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="radial"></div>
+  <div class="linear"></div>
+</body>
+
+</html>
